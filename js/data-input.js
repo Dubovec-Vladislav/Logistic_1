@@ -2,17 +2,17 @@ function calculateData() {
   const pointCount = document.getElementById('pointCount').value;
   const numberOfCars = parseInt(document.getElementById('carCount').value);
   const workTime = parseInt(document.getElementById('workTime').value);
-
+  console.log('WorkTime input:', workTime); // Добавьте лог для проверки
   const depotToPointsDistances = [];
-  const careerToPointsDistances = [];
+  const treatmentToPointsDistances = []; // Бывший careerToPointsDistances
   const needs = [];
 
   for (let i = 0; i < pointCount; i++) {
     const depotDistance = parseFloat(document.getElementById(`depotDistance${i}`).value);
-    const careerDistance = parseFloat(document.getElementById(`careerDistance${i}`).value);
+    const treatmentDistance = parseFloat(document.getElementById(`treatmentDistance${i}`).value);
     const pointNeeds = parseFloat(document.getElementById(`needs${i}`).value);
     depotToPointsDistances.push(depotDistance);
-    careerToPointsDistances.push(careerDistance);
+    treatmentToPointsDistances.push(treatmentDistance);
     needs.push(pointNeeds);
   }
 
@@ -24,5 +24,5 @@ function calculateData() {
   };
   transport["actualLiftingCapacity"] = transport.liftingCapacity * transport.capacityUtilizationFactor;
 
-  main(depotToPointsDistances, careerToPointsDistances, needs, transport, numberOfCars, workTime);
+  main(depotToPointsDistances, treatmentToPointsDistances, needs, transport, numberOfCars, workTime);
 }
