@@ -13,7 +13,7 @@ function dataOutput(cars, points, workTime, percent) {
     htmlString += `<div class="cars__list-point point"><span>Пробег:</span> ${item['Пробег']} км</div>`;
 
     const routeString = Object.entries(item['Маршрут'])
-      .map(([point, trips]) => `<li class="cars__list-route-item">${point} - ${trips} вывозов</li>`)
+      .map(([point, trips]) => `<li class="cars__list-route-item">${point} - ${trips} вывоза</li>`)
       .join('');
     htmlString += `<div class="cars__list-point point"><span>Маршрут:</span> <ul class="cars__list-route">${routeString}</ul></div>`;
     htmlString += '</li>';
