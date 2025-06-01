@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logistic Project</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/null-style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="main__form">
+        <div class="main__form-row">
+          <div class="main__form-field">
+            <div class="main__form-label">Количество точек:</div>
+            <input class="main__form-field-input" type="number" id="pointCount" min="1" oninput="createPointInputs()" placeholder="Количество точек" />
+          </div>
+          <div class="main__form-field">
+            <div class="main__form-label">Введите количество машин:</div>
+            <input class="main__form-field-input" type="number" id="carCount" min="1" placeholder="Количество машин" />
+          </div>
+        </div>
+
+        <div id="pointInputs"></div>
+
+        <div class="main__form-row">
+          <div class="main__form-field">
+            <div class="main__form-label">Характеристики транспорта:</div>
+            <div class="main__form-field-inputs">
+              <input class="main__form-field-input" type="number" id="speed" min="1" placeholder="Скорость (км/ч)" />
+              <input class="main__form-field-input" type="number" id="liftingCapacity" min="1" placeholder="Грузоподъёмность (т)" />
+              <input
+                class="main__form-field-input"
+                type="number"
+                id="capacityUtilizationFactor"
+                min="1"
+                placeholder="Коэффициент использования грузоподъемности"
+              />
+              <input class="main__form-field-input" type="number" id="workTime" min="1" placeholder="Время работы (ч)" />
+              <input class="main__form-field-input" type="number" id="loadingAndUnloadingTime" min="1" placeholder="Время погрузки/разгрузки (ч)" />
+            </div>
+          </div>
+        </div>
+
+        <button class="main__form-btn" onclick="calculateData()">Рассчитать</button>
+      </div>
+      <div class="main__block"></div>
+    </div>
+    <script src="./js/data-input.js" defer></script>
+    <script src="./js/utils.js" defer></script>
+    <script src="./js/main-script.js" defer></script>
+    <script src="./js/data-output.js" defer></script>
+  </body>
+</html>
