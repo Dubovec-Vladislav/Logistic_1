@@ -24,7 +24,7 @@ function dataOutput(cars, points, workTime, percent) {
   points.forEach((point) => {
     htmlString += '<li class="points__list-item item">';
     htmlString += `<div class="points__list-title title">${point['Название']}</div>`;
-    htmlString += `<div class="points__list-point point"><span>Оставшееся количество вывозов:</span> ${point.КоличествоЕздок}</div>`;
+    htmlString += `<div class="points__list-point point"><span>Оставшееся количество вывозов:</span> ${point.КоличествоЕздок < 0 ? 0 : point.КоличествоЕздок}</div>`;
     htmlString += `<div class="points__list-point point"><span>Объем вывезенных отходов:</span> ${Math.round(point.Потребность - point.ОставшаясяПотребность)}/${point.Потребность} м³</div>`;
     htmlString += '</li>';
   });
